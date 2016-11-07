@@ -1,0 +1,166 @@
+/* Orbit Animation CSS */
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+#universe {
+    background: black radial-gradient(orange, #000, #000);
+}
+
+
+
+/* Style and position the sun, earth and moon elements 
+**************************************************** */
+#sun {
+    position: absolute;
+    z-index: 4;
+    
+    height: 200px;
+    width: 200px;
+    
+    /* top/left will position the element in the center based on the top-left corner of the element */
+    top: 50%;
+    left: 50%;
+    /* use margin-top/left to refine the position of the element and base it on the element's center which is half of it's height and width -- 200px/2 = 100px*/
+    margin-top: -100px; /* shifting the element in the "negative" direction */
+    margin-left: -100px; /* shifting the element in the "negative" direction */
+    
+    
+    background: orange radial-gradient( red, orange);
+    border-radius: 100%;
+    box-shadow: 0 0 50px orange;
+    
+    animation: sunFire 3s infinite alternate;
+}
+
+#earth {
+    height: 80px;
+    width: 80px;
+    background: blue radial-gradient( blue, navy);
+    border-radius: 100%;
+    
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin-top: -40px;
+}
+
+#moon {
+    height: 20px;
+    width: 20px;
+    
+    background: gray radial-gradient(#ddd, #888);
+    border-radius: 100%;
+}
+
+
+
+/* Establish the earthOrbit and moonOrbit elements
+************************************************** */
+#earthOrbit {
+    /* border: solid 1px red; /* outlined so we can see the path */
+    
+    position: absolute;
+    z-index: 4;
+    
+    height: 700px; /* Earth's orbit is more of an elipse than a perfect circle */
+    width: 600px;
+    
+    /* top/left will position the element in the center based on the top-left corner of the element */
+    top: 50%;
+    left: 50%;
+    /* use margin-top/left to refine the position of the element and base it on the element's center which is half of it's height and width -- 600px/2 = 300px*/
+    margin-top: -300px; /* shifting the element in the "negative" direction */
+    margin-left: -300px; /* shifting the element in the "negative" direction */
+    
+    border-radius: 100%;
+    
+    animation: orbit 36s linear/* constant rate */ infinite;
+  }
+
+
+#moonOrbit {
+    
+    /* border: solid 1px red; /* outlined so we can see the path */
+    
+    position: absolute;
+    z-index: 4;
+    
+    height: 120px;
+    width: 120px;
+    
+    top: 50%;
+    left: -20px;
+    /* use margin-top to refine the position of the element and base it on the element's center which is half of it's height and width -- 120px/2 = 60px*/
+    margin-top: -60px;
+    
+    border-radius: 100%;
+    
+    animation: orbit 6s linear infinite reverse;
+}
+
+
+
+/* Establish the keyframe animations for the solar flare and orbit 
+*************************************************************** */
+@keyframes sunFire{  /* solar flare animation */
+    from {
+        box-shadow: 0 0 50px red;
+        
+    }
+    to {
+        box-shadow: 0 0 100px #f5c91a;
+    }
+}
+
+@keyframes orbit {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(362deg);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
